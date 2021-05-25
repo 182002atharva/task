@@ -1,0 +1,13 @@
+<html>
+<body>
+
+<h1>task4</h1>
+<script>
+	const request = new Request('https://jsonplaceholder.typicode.com/posts');
+	fetch(request)
+  .then(response => {
+    console.log(response.json());
+  })
+</script>
+</body>
+</html>
