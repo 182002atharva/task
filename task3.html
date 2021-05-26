@@ -3,10 +3,10 @@
 	<script> 
 	function promise(bull){
 		if(bull == true){
-         setTimeout(()=>{promise.resolve(console.log("promise resolved"))},1000);
+         setTimeout(()=>{Promise.resolve(console.log("promise resolved"))},1000);
 		}else
 		{
-		  setTimeout(()=>{promise.reject(console.log("promise rejected"))},1000);
+		  setTimeout(()=>{Promise.reject(console.log("promise rejected"))},1000);
 		}
 	}
 </script>
