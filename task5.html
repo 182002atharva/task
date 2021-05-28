@@ -1,0 +1,77 @@
+<html>
+<head>
+<style>
+body {
+	  background-color: skyblue;
+    text-align: center;
+	}
+ h1 {
+	  font-family: sans-serif;
+	  color: white;
+	}
+ p {
+    text-align: left;
+    background: white;
+    border-radius: 4px;
+    padding: 10px;
+     width: 400px;
+    height: 30px;
+    margin: 10px;
+  }
+   form button , form input{
+    border: none;
+    background: white;
+    border-radius: 2px;
+  }
+  form button{
+    color: white;
+    background-color: lightgreen;
+    cursor: pointer;
+  }
+  #cross {
+  border-radius: 50%;
+  padding: 0.5em;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background: lightgrey;
+  position: relative;
+}
+</style>
+</head>
+<body>
+<h1>Todos</h1>
+<form>
+  <input type="text"  name="text" placeholder="New todo">
+  <button type="submit"><i>Add</i></button>
+  </form>
+ <div align="center">
+  <ul>
+  </ul>
+</div>
+</form>
+<script>
+	loadEvents();
+// load every event in the page
+function loadEvents(){
+  document.querySelector('form').addEventListener('submit',submit);
+}
+// subit data function
+function submit(e){
+  e.preventDefault();
+  let input = document.querySelector('input');
+  if(input.value != '')
+    addTask(input.value);
+  input.value = '';
+}
+
+// add tasks
+function addTask(task){
+  let li = document.createElement('p');
+  let ul = document.querySelector('ul');
+  li.innerHTML = `<input type="checkbox"><label>${task}</label><button id="cross"></button>`;
+  ul.appendChild(li);
+}
+</script>
+</body>
+</html>
