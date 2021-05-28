@@ -2,14 +2,15 @@
 <head>
 <style>
 body {
-	  background-color: skyblue;
+    background-color: skyblue;
     text-align: center;
-	}
+  }
  h1 {
-	  font-family: sans-serif;
-	  color: white;
-	}
- p {
+    font-family: sans-serif;
+    color: white;
+  }
+li {
+    list-style-type: none;
     text-align: left;
     background: white;
     border-radius: 4px;
@@ -18,12 +19,12 @@ body {
     height: 30px;
     margin: 10px;
   }
-   form button , form input{
+   #submit , div input{
     border: none;
     background: white;
     border-radius: 2px;
   }
-  form button{
+  #submit {
     color: white;
     background-color: lightgreen;
     cursor: pointer;
@@ -37,41 +38,51 @@ body {
   background: lightgrey;
   position: relative;
 }
+li button{
+  border: none;
+  cursor: pointer;
+}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <h1>Todos</h1>
-<form>
+<div>
   <input type="text"  name="text" placeholder="New todo">
-  <button type="submit"><i>Add</i></button>
-  </form>
+  <button id="submit">Add</button>
+  </div>
  <div align="center">
   <ul>
   </ul>
 </div>
 </form>
 <script>
-	loadEvents();
-// load every event in the page
-function loadEvents(){
-  document.querySelector('form').addEventListener('submit',submit);
-}
-// subit data function
-function submit(e){
-  e.preventDefault();
-  let input = document.querySelector('input');
-  if(input.value != '')
-    addTask(input.value);
-  input.value = '';
-}
+  const list = document.querySelector('ul');
+      const input = document.querySelector('input');
+      const button = document.querySelector('button');
 
-// add tasks
-function addTask(task){
-  let li = document.createElement('p');
-  let ul = document.querySelector('ul');
-  li.innerHTML = `<input type="checkbox"><label>${task}</label><button id="cross"></button>`;
-  ul.appendChild(li);
-}
+      button.onclick = function() {
+        if(input.value != ''){
+        let myItem = input.value;
+        input.value = '';
+
+        const listItem = document.createElement('li');
+        const listText = document.createElement('span');
+        const listBtn = document.createElement('button');
+
+        listItem.appendChild(listText);
+        listText.innerHTML = `<input type="checkbox"><label>${myItem}</label>`;
+        listItem.appendChild(listBtn);
+        listBtn.innerHTML = '<i class="fas fa-window-close" ></i>';
+        list.appendChild(listItem);
+
+
+        listBtn.onclick = function(e) {
+          list.removeChild(listItem);
+        }
+         }
+        input.focus();
+      }
 </script>
 </body>
 </html>
