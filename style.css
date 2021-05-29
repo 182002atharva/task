@@ -1,0 +1,43 @@
+  
+body {
+    background-color: skyblue;
+    text-align: center;
+  }
+ h1 {
+    font-family: sans-serif;
+    color: white;
+  }
+li {
+    list-style-type: none;
+    align-items: flex-end;
+    background: white;
+    border-radius: 4px;
+    padding: 10px;
+     width: 400px;
+    height: 30px;
+    margin: 10px;
+  }
+   #submit , div input{
+    border: none;
+    background: white;
+    border-radius: 2px;
+  }
+  #submit {
+    color: white;
+    background-color: lightgreen;
+    cursor: pointer;
+  }
+li button{
+  border: none;
+  cursor: pointer;
+  padding-left: 50px;
+  background-color: white;
+}
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  opacity: 0.5;
+  box-shadow: none;
+}
+p{
+  color: white;
+}
