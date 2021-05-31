@@ -3,6 +3,7 @@
       const button = document.querySelector('button');
       let counter = 0;
       let Incomplete = 0;
+      let complete = 0;
 
       button.onclick = function() {  
         if(input.value != ''){
@@ -34,10 +35,12 @@
         if(checkboxname.checked)
           { 
             Incomplete--;
+            complete++;
           }
           else 
           { 
             Incomplete++;
+            complete--;
           }
 
         todocount();
@@ -47,10 +50,7 @@
         if(count == true){
           counter++;
           Incomplete++;
-        }else if(count == false){
-          counter--;
-          Incomplete--;
         }
         const paragraph = document.querySelector('p');
-        paragraph.innerHTML = `Total:${counter}, complete:${counter - Incomplete} , Incomplete:${Incomplete}`;
+        paragraph.innerHTML = `Total:${counter}, complete:${complete} , Incomplete:${Incomplete}`;
       }
