@@ -15,7 +15,7 @@
         const listBtn = document.createElement('button');
 
         listItem.appendChild(listText);
-        listText.innerHTML = `<input type="checkbox" id="${counter}" name="${counter}" onchange="checkboxcheck(${counter})"><label>${myItem}</label>`;
+        listText.innerHTML = `<input type="checkbox"  onchange="checkboxcheck(${counter})"><label>${myItem}</label>`;
         listItem.appendChild(listBtn);
         listBtn.innerHTML = '<i class="fas fa-window-close"></i>';
         listBtn.setAttribute("id", `${counter}`);
@@ -63,4 +63,9 @@
         }
         const paragraph = document.querySelector('p');
         paragraph.innerHTML = `Total:${counter}, complete:${complete} , Incomplete:${Incomplete}`;
+      }
+
+      function search(){
+            const searchdata = document.getElementById('searchbox');
+            console.log(searchdata.value);
       }
