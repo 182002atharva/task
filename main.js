@@ -18,10 +18,18 @@
         listText.innerHTML = `<input type="checkbox" id="${counter}" name="${counter}" onchange="checkboxcheck(${counter})"><label>${myItem}</label>`;
         listItem.appendChild(listBtn);
         listBtn.innerHTML = '<i class="fas fa-window-close"></i>';
+        listBtn.setAttribute("id", `${counter}`);
         list.appendChild(listItem);
 
 
         listBtn.onclick = function(e) {
+         const checkboxname = document.getElementById(listBtn.id);
+         if(checkboxname.checked){
+            complete--;
+         }else
+         {
+            Incomplete--;
+         }
           list.removeChild(listItem);
           todocount(false);
         }
@@ -50,6 +58,8 @@
         if(count == true){
           counter++;
           Incomplete++;
+        }else if(count == false){
+          counter--;
         }
         const paragraph = document.querySelector('p');
         paragraph.innerHTML = `Total:${counter}, complete:${complete} , Incomplete:${Incomplete}`;
