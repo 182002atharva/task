@@ -41,3 +41,7 @@ input[type="checkbox"]:checked + label {
 p{
   color: white;
 }
+#searchboxdiv{
+  margin: 10px;
+  align-self: center;
+}
