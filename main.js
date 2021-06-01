@@ -67,5 +67,17 @@
 
       function search(){
             const searchdata = document.getElementById('searchbox');
-            console.log(searchdata.value);
+          var searchdatavalue = searchdata.value;
+            const list =  document.querySelectorAll('li');
+           console.log(typeof(searchdatavalue)); 
+            for(let i=0 ; i<list.length ; i++)
+            { let eachlist = list[i].innerText;
+              list[i].style.display = "none";
+               if(searchdatavalue.includes(eachlist) == true){
+                 list[i].style.display = "";
+                }else
+                {
+                  list[i].style.display = "none";
+                }
+            }
       }
