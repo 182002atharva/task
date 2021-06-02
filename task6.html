@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task6</title>
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<button onclick="previmg()">prev</button>
+	<img src="testimg1.jpg">
+	<img src="testimg2.jpg">
+	<img src="testimg3.jpg">
+	<img src="testimg4.jpg">
+	<button onclick="nextimg()">next</button>
+</div>
+<script type="text/javascript">
+	var n = 0;
+ var img = document.querySelectorAll('img');
+    console.log(img.length);
+	show(0);
+ function nextimg(){
+ 	if(n > img.length - 2)
+ 	 { n = 0;}
+ 	else
+ 	{n = n + 1;}
+ console.log(n);
+    show(n);	
+ }
+  function previmg(){
+  	if(n <= 0)
+  	{ n = img.length - 1;}
+  	else
+  	{n = n - 1;}
+    show(n);
+    console.log(n);
+ }
+ function show(n){
+  for(var i=0 ; i<img.length ; i++){
+ 	if(i == n){ img[i].style.display = ""; }
+ 	else
+ 	{
+ 	img[i].style.display = "none";
+ 	}
+ }
+ }
+</script>
+</body>
+</html>
