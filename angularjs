@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="phonecatApp">
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js" integrity="sha512-5zOAub3cIpqklnKmM05spv4xttemFDlbBrmRexWiP0aWV8dlayEGciapAjBQWA7lgQsxPY6ay0oIUVtY/pivXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body ng-controller="PhoneListController">
+
+    <p>Total number of phones: {{phones.length}}</p>
+     <ul>
+      <li ng-repeat="phone in phones">
+      	<span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+      </li>
+    </ul>
+    <p>hello , {{name}}!</p>
+    <table>
+    	<tr><th>row number</th></tr>
+    	<tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]">{{i+1}}</td></tr>
+    </table>
+    <phone-list></phone-list>
+    <script>
+    	var phonecatApp = angular.module('phonecatApp', []);
+
+    	phonecatApp.controller('PhoneListController', function PhoneListController($scope) {
+    	  $scope.phones = [
+    	    {
+    	      name: 'Nexus S',
+    	      snippet: 'Fast just got faster with Nexus S.'
+    	    }, {
+    	      name: 'Motorola XOOM™ with Wi-Fi',
+    	      snippet: 'The Next, Next Generation tablet.'
+    	    }, {
+    	      name: 'MOTOROLA XOOM™',
+    	      snippet: 'The Next, Next Generation tablet.'
+    	    }
+    	  ];
+    	  $scope.name = 'atharva';
+    	});
+    </script>
+    <script>
+    	angular.
+  module('phonecatApp').
+  component('phoneList', {  // This name is what AngularJS uses to match to the `<phone-list>` element.
+    templateUrl : "/phonelist.template.html",
+    /*template:
+     'Search:' + '<input ng-model="$ctrl.query"/>' +
+     'sort by:' + ' <select ng-model="$ctrl.orderProp">' + 
+         ' <option value="name">Alphabetical</option>' +
+          '<option value="age">Newest</option>' +
+       ' </select>' +
+        '<p>Total number of phones: {{$ctrl.phones.length}}</p>' +
+        '<ul>' +
+          '<li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">' +
+          '<a href=#!/{{phone.id}}> <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" /> </a>' +
+            '<a href=#!/{{phone.id}}>{{phone.name}}</a>' +
+            '<p>{{phone.snippet}}</p>' +
+          '</li>' +
+        '</ul>',*/
+    controller: function PhoneListController($http) {
+      var self = this;
+      self.orderProp = 'age';
+      $http.get('phones.json').then(function(response) {
+          self.phones = response.data;
+      });
+    }
+  });
+    </script>
+  </body>
+</html>
