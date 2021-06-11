@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo2">
+<head>
+	<meta charset="utf-8">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js" integrity="sha512-5zOAub3cIpqklnKmM05spv4xttemFDlbBrmRexWiP0aWV8dlayEGciapAjBQWA7lgQsxPY6ay0oIUVtY/pivXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	  <script src="app.module.js"></script>
+	  <script src="app.config.js"></script>
+	  <script src="navigator.component.js"></script>
+</head>
+<body>
+	<nav>
+	<a href=#!/{{1+0}}>home</a>
+	<a href=#!/{{2+6}}>about</a>
+	<a href=#!/{{3+9}}>product</a>
+    <a href=#!/{{4+2}}>contact</a>
+</nav>
+<div ng-view></div>
+</body>
+</html>
