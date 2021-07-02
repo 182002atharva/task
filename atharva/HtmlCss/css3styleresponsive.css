@@ -1,0 +1,161 @@
+ @media screen and (max-width: 992px) {
+      .mob-topnav{
+        display: block;
+        float: right;
+        border: none;
+        text-align: right;
+        width: 100%;
+        position: relative;
+      }
+      header {
+          padding: 7px;
+          font-size: 24px;
+          letter-spacing: 1px;
+          word-spacing: -6px;
+      }
+     .mob-topnav button{
+        padding: 33px;
+        font-size: 50px;
+        border: none;
+        float: right;
+        width: 20%;
+        background-color: #F28A03;
+      }
+      .mob-topnav i{
+        color: white;
+      }
+      .mob-logo{
+        text-align: center;
+        width: 100%;
+        font-family: 'Cedarville Cursive', cursive;
+        margin: 0 auto;
+        display: inline;
+      }
+      .mob-logo button{
+        float: right;
+      }
+      .mob-logo span{
+        font-size: 57px;
+        text-align: center;
+        float: left;
+      }
+      .mobnavlist{
+        text-align: center;
+        bottom: 0;
+        top: 5%;
+        width: 100%;
+        background-color: #F28A03;
+        display: none;
+      }
+      .mobnavlist a{
+        color: white;
+        font-size: 33px;
+      }
+      .container{
+        width: 100%;
+        margin: 0 auto;
+      }
+      .col-left{
+        float: left;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        font-size: 27px;
+      }
+      .col-right{
+        float: left;
+        width: 100%;
+        height: 57px;
+        text-align: center;
+        font-size: 42px;
+      }  
+      nav{
+        display: none;
+      }
+      .top-img-text {
+          position: absolute;
+          top: 14%;
+          left: 7%;
+          text-align: center;
+          font-size: 22px;
+          color: white;
+      }
+      .top-info-img2 {
+          position: absolute;
+          bottom: 0;
+          top: 29%;
+          left: 66%;
+          right: 0;
+          width: 2%;
+          height: 50px;
+      }
+      .top-info-img1 {
+        float: none;
+        text-align: center;
+        position: relative;
+        margin-right: 60px;
+        width: 100%;
+        padding-bottom: 20px;
+      }
+      .top-info-img2 {
+        position: absolute;
+        bottom: 0;
+        top: 27%;
+        left: 66%;
+        right: 0;
+        width: 2%;
+        height: 50px;
+      }
+      .top-subinfo {
+        width: 100%;
+        text-align: center;
+      }
+      .info2 h1 {
+          float: none;
+          text-align: center;
+          font-size: 38px;
+      }
+      .overlay-div {
+        background: #F28A03;
+        height: 387px;
+        width: 45%;
+        padding: 53px;
+        color: white;
+        font-size: 21px;
+        position: absolute;
+        bottom: 4%;
+        top: -10%;
+        right: 29%;
+      }
+      .image3 div {
+          left: 26%;
+      }
+      .top-info-img2 {
+          position: absolute;
+          bottom: 0;
+          top: 27%;
+          left: 72%;
+          right: 0;
+          width: -6%;
+          height: 49px;
+      }
+      .div-list {
+          text-align: center;
+          float: none;
+          width: 93%;
+          padding: 10px;
+          border: 1px;
+          margin: 159px 41px;
+          box-shadow: 0 4px 6px grey;
+      }
+      .divlists {
+          float: none;
+      }
+      .bottom-info {
+          text-align: center;
+          float: none;
+          width: 100%;
+          color: white;
+          padding: 49px -39px;
+      }
+    }
